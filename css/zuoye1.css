@@ -1,0 +1,18 @@
+*{padding: 0;margin: 0;}
+#biao img{ width: 500px;height: 500px;margin-left: 300px;}
+#biaozhenmiao{height: 131px;width: 31px;background-color: red;position: absolute;margin-top: -389px;margin-left: 533px;}
+#biaozhenmiao img{position: absolute;margin-top: -389px; animation: 60S zhen linear infinite;height: 314px;margin-left: 108px;}
+#biaozhenmiao{height: 308px;width: 80px;}
+#biaozhenshi img{position: absolute;margin-top: -712px; animation: 43200S zhen linear infinite;height: 307px;margin-left: 146px;}
+#biaozhenmiao{height: 352px;width: 80px;}
+#biaozhenfen img{position: absolute;margin-top: -760px; animation: 3600S zhen linear infinite;margin-left: 87px;height: 352px;}
+@keyframes zhen{
+				from{
+					transform-origin: 5px 0px;
+					transform:rotate(0deg) ;
+				}
+				to{	transform-origin: 5px 0px;
+					transform:rotate(360deg) ;
+					}
+			}
+			

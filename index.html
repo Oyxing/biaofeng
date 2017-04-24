@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	
+		<style type="text/css">
+			*{padding: 0;margin: 0;}
+			#biao img{ width: 500px;height: 500px;margin-left: 300px;z-index: -1;}
+			#biaozhenmiao{background: url(img/biaozhen2.png);border-top-left-radius:100%; /*animation: 60S zhen linear infinite;*/height: 131px;width:10px;position: absolute;background-color:yellow;margin-top: -382px;margin-left: 546px;}
+			#biaozhenmiao {z-index: 1000px;}
+			#biaozhenshi{border-top-right-radius:100%; animation: 43200S zhen1 linear infinite;background-color: red; height: 101px;width:8px;position: absolute;margin-top: -349px;margin-left: 549px;}
+			#biaozhenfen{border-top-left-radius:100%; animation: 3600S zhen2 linear infinite; background-color: green; height: 100px;width: 7px;position: absolute;margin-top: -349px;margin-left: 545px;}
+			#yuandian{width: 20px;height: 20px;border-radius: 50%;background-color: #D4D5D7;float: left;position: absolute;left: 542px;top: 242px;}
+			/*@keyframes zhen{
+				from{
+					transform-origin:5px 131px;
+					transform:rotate(0deg) ;
+				}
+				to{	transform-origin:5px 131px;
+					transform:rotate(360deg) ;
+					}
+			}*/
+			/*@keyframes zhen2{
+				from{
+					transform-origin:5px 100px;
+					transform:rotate(60deg) ;
+				}
+				to{	transform-origin:5px 100px;
+					transform:rotate(420deg) ;
+					}
+			}
+			@keyframes zhen1{
+				from{
+					transform-origin:5px 90px;
+					transform:rotate(35deg) ;
+				}
+				to{	transform-origin:5px 90px;
+					transform:rotate(395deg) ;
+					}
+				}*/
+			input{text-align: center;font-weight: 600;font-family: "微软雅黑";}
+			#box2{width: 100px;border: 0.2rem solid yellow;}
+			#box1{width: 70px;border: 0.2rem solid yellow;}
+			#box3{width: 50px;border: 0.2rem solid yellow;}	
+			#box{position: absolute;top: 10px;}
+		
+		</style>
+		
+	</head>
+	<body>
+		<div id="biao">
+			<img src="img/biao (2).png" />
+			<div id="biaozhenmiao"></div>
+			<div id="biaozhenfen"></div>
+			<div id="biaozhenshi"></div>		
+		</div>
+		<div id="yuandian"> </div>
+		<div id="box">
+			
+		
+		<input type="text" id="box3" value="" />
+		<input type="text"  id="box1" value="" />
+		<input type="text"  id="box2" value="" />
+		</div>
+		<script type="text/javascript">
+			dingshi()
+			 miao1()
+			 fen1()
+			 shi1()
+		function dingshi(){
+		var z=1	
+		if(z){
+		}		
+//		天
+		var mytiam = new Date;
+//		年
+		var nian =mytiam.getFullYear()		
+//		月
+		var yue =mytiam.getMonth()+1;
+//		日
+		var tian =mytiam.getDate()
+//		时
+		var shi =mytiam.getHours()
+//		分
+		var fen =mytiam.getMinutes()
+//		秒
+		var miao =mytiam.getSeconds()
+		function youhua(n){
+			if(n<10){n="0"+n}
+			
+		//调用一个值	
+			return n;
+		}
+		var y=nian+"年"
+		var x=(yue+"月"+youhua(tian)+"日")
+		var z=(youhua(shi)+"时"+youhua(fen)+"分"+youhua(miao)+"秒")		
+			document.getElementById("box3").value=y			
+			document.getElementById("box1").value=x
+			document.getElementById("box2").value=z			
+		}
+		setInterval(dingshi,1000)
+		function miao1(){
+			var miao1 = document.getElementById("biaozhenmiao");
+		   	var time = new Date
+			var s =time.getSeconds()
+			miao1.style.transform="rotate("+6*s+"deg)";
+			miao1.style.transformOrigin="5px 100% ";
+		}
+		setInterval(miao1,1000);
+		function fen1(){
+			var fen1= document.getElementById("biaozhenfen");
+		   	var time = new Date
+			var f =time.getMinutes()
+			fen1.style.transform="rotate("+6*f+"deg)";
+			fen1.style.transformOrigin="5px 100% ";
+		}
+		setInterval(fen1,1000);
+		function shi1(){
+			var shi1= document.getElementById("biaozhenshi");
+		   	var time = new Date
+			var sh =(time.getHours() + time.getMinutes()/60) / 12 * 360;
+			shi1.style.transform="rotate("+sh+"deg)";
+			shi1.style.transformOrigin="5px 100% ";
+		}
+		setInterval(shi1,1000);
+
+//		function miao(){
+//		     var today = new Date();//用来获取系统当前的时间，秒针的时间与系统时间同步
+//			var miao=today.getSeconds()
+//      	if(miao>0){
+//              var point = document.getElementById("biaozhenmiao");
+//              //通过保持夹角的不变。来画直线
+//              //Math.cos(today.getSeconds() * 6 * Math.PI / 180 - Math.PI / 2) * j + 125
+//              point.style.left = (Math.cos(today.getSeconds() * 6 * Math.PI / 180 - Math.PI / 2) * j + 125) + "px";
+//              point.style.top = (Math.sin(today.getSeconds()*6 * Math.PI / 180 - Math.PI / 2) * j + 125) + "px";
+//              document.getElementById("biaozhenmiao").appendChild(point);
+//          } 
+//          setInterval(miao,1000);
+//		
+//		}
+		
+		
+		
+		</script>
+		
+		
+	</body>
+</html>

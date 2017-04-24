@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#box{width: 200px;height: 200px;animation: 10S zhen linear infinite;margin: 100px auto;}
+			#feng1{width: 100px;height: 50px;border-radius: 50px 50px 0 0 ;background-color: green;margin-top: 50px;float: left;}
+			#feng2{width: 50px;height: 100px;border-radius: 0px 50px 50px 0 ;background-color: gray;margin-left: 100px;}
+			#feng3{width: 100px;height: 50px;border-radius: 0 0 50px 50px ;background-color: greenyellow;margin-left: 100px;}
+			#feng4{width: 50px;height: 100px;border-radius: 50px 0 0 50px ;background-color: gold;margin-left: 50px;margin-top: -50px;}
+			#box:hover{animation: paused;}
+			@keyframes zhen{
+				from{transform-origin:100px 100px;transform:rotate(0deg) ;}
+				25%{left:300px;top:100px;background-color:yellow;border-radius: 20%;}
+				50%{left:200px;top:200px;background-color:burlywood;opacity: 0.2;}
+				75%{left:100px;top:300px;background-color:red;border-radius: 50%;}
+				to{transform-origin:100px 100px;transform:rotate(360deg) ;}
+			}
+			
+		</style>
+		
+	</head>
+	<body>
+		<div id="box">
+			<div id="feng1">
+				
+			</div>
+			<div id="feng2">
+				
+			</div>
+			<div id="feng3">
+				
+			</div>
+			<div id="feng4">
+				
+			</div>
+		</div>
+		
+		
+		
+	</body>
+</html>
